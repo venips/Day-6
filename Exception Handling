@@ -1,0 +1,67 @@
+package com.veni.javafiles;
+
+public class ExceptionHandling1 {
+
+	public static void main(String[] args) {
+		
+		Calculator calObj1 = new Calculator(20,0);
+		String s=calObj1.toString();
+		System.out.println("My Program "+s);
+		calObj1.divide();
+		
+		TV t=new TV();
+		try {
+			t.operation("Off");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+	}
+
+}
+class Calculator{
+	int a=5;
+	int b=10;
+	
+	public Calculator(int a, int b) {
+		super();
+		this.a = a;
+		this.b = b;
+	}
+	@Override
+	public String toString() {
+		return "Calculator [a=" + a + ", b=" + b + "]";
+	}
+	void divide() {
+		int c;
+		try {
+			c = a/b;
+			System.out.println("The value of c is:"+c);
+			
+		}catch(ArithmeticException ae) {
+			System.out.println("Divisor cannot be zero");
+		}
+	}
+}
+
+class TV
+{
+	void operation(String opr) throws Exception
+	{
+		if(opr.equalsIgnoreCase("On"))
+		{
+			System.out.println("Switch on the TV");
+		}
+		else if(opr.equalsIgnoreCase("Off"))
+		{
+			System.out.println("Switch off the TV");
+		}
+		else
+		{
+			throw new Exception("Operation Not Allowed");
+		}
+	}
+}
+
+
