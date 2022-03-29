@@ -17,13 +17,13 @@ public class ExceptionHandling1 {
 			//e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		TShirt t=new TShirt();
-		TShirt t1=new TShirt();
+		TShirt ts=new TShirt();
+		TShirt ts1=new TShirt();
 		
-		t.setName("RedColor");
-		t1.setName("WhiteColor");
-		t.start();
-		t1.start();
+		ts.setName("RedColor");
+		ts1.setName("WhiteColor");
+		ts.start();
+		ts1.start();
 		//t.run();
 		//t1.run();
 	}
@@ -83,10 +83,9 @@ class TShirt extends Thread
 	}
 	void printDetails()
 	{
-		for(int i=0;i<5;i++)
+		for(int i=0;i<1000;i++)
 		{
 			System.out.println("Shirt "+Thread.currentThread().getName()+"-----" +i+" Printing");
 		}
 	}
 }
-
